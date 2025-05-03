@@ -1,0 +1,9 @@
+# caches
+__pycache__/
+.pytest_cache/
+
+# virtual‑env
+.venv/
+
+# generated data
+data/
