@@ -16,7 +16,7 @@ def _make_df(raw_docs: list[dict]) -> pd.DataFrame:
         return pd.DataFrame()
     df = pd.DataFrame(raw_docs)
     df.drop(columns=["_id"], inplace=True, errors="ignore")
-    # optional: convert timestamp (seconds) → pandas Timedelta index
+    #convert timestamp (seconds) → pandas Timedelta index
     df["timestamp"] = pd.to_timedelta(df["timestamp"], unit="s")
     df.set_index("timestamp", inplace=True)
     return df
@@ -26,7 +26,7 @@ def load_all(
     db: str  = DEFAULT_DB,
     coll: str = DEFAULT_COLL
 ) -> pd.DataFrame:
-    """Load entire collection into a DataFrame (use only for small-ish datasets)."""
+    """Load entire collection into a DataFrame."""
     client = MongoClient(uri)
     cursor = client[db][coll].find({})
     docs   = list(cursor)

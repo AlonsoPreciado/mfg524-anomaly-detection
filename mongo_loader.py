@@ -12,12 +12,12 @@ from pymongo import MongoClient
 def load_files(client, db_name, coll_name, files):
     coll = client[db_name][coll_name]
     for fname in files:
-        print(f"⏳  Loading {fname} ...")
+        print(f"  Loading {fname} ...")
         with open(fname, "r", encoding="utf‑8") as f:
             docs = [json.loads(line) for line in f]
         if docs:
             result = coll.insert_many(docs)
-            print(f"   ✔  Inserted {len(result.inserted_ids)} docs")
+            print(f"Inserted {len(result.inserted_ids)} docs")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

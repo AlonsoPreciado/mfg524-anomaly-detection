@@ -1,5 +1,5 @@
 """
-pipeline.py – stream data  ➜  preprocess ➜  detect ➜  (optional) write anomalies.
+pipeline.py – stream data  ➜  preprocess ➜  detect ➜   write anomalies.
 
 Quick start (default Z‑score):
     python pipeline.py --batch 800

@@ -51,7 +51,7 @@ def preprocess(df: pd.DataFrame) -> pd.DataFrame:
 # Convenience wrapper for streaming use:
 def preprocess_batches(
         batches: Iterable[pd.DataFrame]               # accept any iterable
-) -> Generator[pd.DataFrame, None, None]:             # <-- correct return type
+) -> Generator[pd.DataFrame, None, None]:             
     """Apply preprocess() to each batch in an iterable."""
     for b in batches:
         yield preprocess(b)
